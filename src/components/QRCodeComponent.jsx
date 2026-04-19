@@ -6,7 +6,7 @@ function QRCodeComponent() {
     <div className="main-container">
       <div className="qr-container">
         <QRCodeSVG
-          value="https://respartinez.github.io/hbd/envelope"
+          value="https://respartinez.github.io/hbd/#/envelope"
           size={180}
           fgColor="#4B0082"
           bgColor="#fff1f2"
