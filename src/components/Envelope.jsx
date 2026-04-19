@@ -1,13 +1,34 @@
 import { useState } from "react";
 import "../styles/Envelope.css";
+import Dialog from "./Dialog";
 
 function Envelope() {
   const [open, setOpen] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
+
+  const handleClick = () => {
+    if (!open) {
+      setShowDialog(true);
+    } else {
+      setOpen(false);
+    }
+  };
+
+  const handleYes = () => {
+    setShowDialog(false);
+    setOpen(true);
+  };
+
+  const handleNo = () => {
+    setShowDialog(false);
+  };
 
   return (
     <div className="main-container">
+      {showDialog && <Dialog onYes={handleYes} onNo={handleNo} />}
+
       <div className="envelope-container">
-        <div className="envelope-wrapper" onClick={() => setOpen(!open)}>
+        <div className="envelope-wrapper" onClick={handleClick}>
           <div className={`envelope ${open ? "open" : ""}`}>
             <div className="flap">
               <div className="flap-inner"></div>
@@ -15,9 +36,12 @@ function Envelope() {
             </div>
             <div className="env-body">
               <div className="card-msg">
-                <p>Happy Birthday lods!</p>
-                <p>Enjoy your day!! 🎉🎂🎁</p>
-              </div>
+                <img
+                    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXNkejZua2ZxMTJnd28zNDQ5M2hmcmdsbjl0bm1qbXM0YmtoanAzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q25yu15kqxU3I6qw3R/giphy.gif"
+                    alt="Happy Birthday"
+                    style={{ width: "100%", borderRadius: "8px" }}
+                />
+                </div>
             </div>
           </div>
           <p className="hint">{open ? "click to close" : "click to open"}</p>
