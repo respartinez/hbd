@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Envelope.css";
+import "../styles/Envelope.css";
 
 function Envelope() {
   const [open, setOpen] = useState(false);
