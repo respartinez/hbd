@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/Dialog.css";
 
 function Dialog({ onYes, onNo }) {
-  const [step, setStep] = useState("first"); // first, second, third, fourth, fifth, sixth, weeme, boboEx
+  const [step, setStep] = useState("first");
   const [noCount, setNoCount] = useState(0);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [ayawCount, setAyawCount] = useState(0);
@@ -32,10 +32,9 @@ function Dialog({ onYes, onNo }) {
     }
   };
 
-  // STEP: first — "Are you sure na gusto mo buksan?"
   if (step === "first") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnRpM3I4emQxNnh1ZTVhNTRsanl3YTg0MmhpNWhtMHg1NHk0YTViOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GqEagMsckM3vRsnrnP/giphy.gif"
@@ -64,10 +63,9 @@ function Dialog({ onYes, onNo }) {
     );
   }
 
-  // STEP: second — "Talaga? Sigurado ka na?"
   if (step === "second") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExamRjMThmeXNjeWtpdWc1dDUzbTVzOG1mcnV3N2F1ZXltMzA2d29hdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZqbBT64ECtjy/giphy.gif"
@@ -95,10 +93,9 @@ function Dialog({ onYes, onNo }) {
     );
   }
 
-  // STEP: third — "Birthday mo ba talaga?"
   if (step === "third") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnRpM3I4emQxNnh1ZTVhNTRsanl3YTg0MmhpNWhtMHg1NHk0YTViOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GqEagMsckM3vRsnrnP/giphy.gif"
@@ -115,10 +112,9 @@ function Dialog({ onYes, onNo }) {
     );
   }
 
-  // STEP: fourth — "Di ba may 16 bday mo?"
   if (step === "fourth") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDBya3puZGdiZGV1M3Z6NmZuZmFwcWN4bHFvbWRveW16OWNnaTFyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3GxmFQ3tGXUi4MChXu/giphy.gif"
@@ -135,10 +131,9 @@ function Dialog({ onYes, onNo }) {
     );
   }
 
-  // STEP: fifth — "Ito na talaga, bubuksan mo or bubuksan mo na?"
   if (step === "fifth") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmtkN2oyc3JhM2NkOXRxcXNjOHBseGM0OHRrMzc2YXpybGQ1Ym4wbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/10YpWPBU7GAYwM/giphy.gif"
@@ -148,17 +143,16 @@ function Dialog({ onYes, onNo }) {
           <p>Ito na talaga, bubuksan mo or bubuksan mo?😂</p>
           <div className="dialog-buttons">
             <button onClick={onYes}>Open</button>
-            <button onClick={onYes}> Open na open</button>
+            <button onClick={onYes}>Open na open</button>
           </div>
         </div>
       </div>
     );
   }
 
-  // STEP: weeme — "Weee eme mo" with back button
   if (step === "weeme") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnd1YnFvMGN6ZGZvNDhnbWg5NmpzaXFxamdsZjV4ZWUxemkydXMzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aHeU3XuJD5aC1fBvTa/giphy.gif"
@@ -174,10 +168,9 @@ function Dialog({ onYes, onNo }) {
     );
   }
 
-  // STEP: boboEx — "Bobo ng ex mo" with back button
-   if (step === "boboEx") {
+  if (step === "boboEx") {
     return (
-      <div className="dialog-overlay">
+      <div className="dialog-overlay" onClick={(e) => e.stopPropagation()}>
         <div className="dialog-box">
           <img
             src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW11d2luYzgxOG9sMnByZW16cjF6eW93NDV5Y3gxczFrYmdtbXd1ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/CWeaJzFCcHrDF1Iaju/giphy.gif"

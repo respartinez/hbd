@@ -7,7 +7,8 @@ function Envelope() {
   const [showDialog, setShowDialog] = useState(false);
 
   const handleClick = (e) => {
-    e.stopPropagation(); // ← dagdag ito para pigilan ang bubbling
+    e.stopPropagation();
+    if (showDialog) return; // ← guard: don't do anything while dialog is open
     if (!open) {
       setShowDialog(true);
     } else {
@@ -38,7 +39,7 @@ function Envelope() {
             <div className="env-body">
               <div
                 className="card-msg"
-                onClick={(e) => e.stopPropagation()} // ← para hindi mag-close/open kapag nag-click sa loob
+                onClick={(e) => e.stopPropagation()}
               >
                 <img
                   src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXNkejZua2ZxMTJnd28zNDQ5M2hmcmdsbjl0bm1qbXM0YmtoanAzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q25yu15kqxU3I6qw3R/giphy.gif"
