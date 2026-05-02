@@ -8,8 +8,9 @@ function QRCodeComponent() {
         <QRCodeSVG
           value="https://respartinez.github.io/hbd/#/pin"
           size={180}
-          fgColor="#4B0082"
-          bgColor="#fff1f2"
+          fgColor="#000000"
+          bgColor="#ffffff"
+          level="H"
         />
         <h3>Happy Birthday, Lods! Enjoy your day!!</h3>
         <h2>SCAN TO OPEN</h2>
