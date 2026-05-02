@@ -1,0 +1,78 @@
+.pin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff1f2;
+}
+
+.pin-box {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(200, 100, 130, 0.15);
+  width: 300px;
+}
+
+.pin-lock {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pin-box h2 {
+  font-size: 1.4rem;
+  color: #6b21a8;
+  margin: 0 0 0.3rem;
+}
+
+.pin-hint {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin: 0 0 1.5rem;
+}
+
+.pin-inputs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.pin-input {
+  width: 52px;
+  height: 60px;
+  font-size: 1.6rem;
+  text-align: center;
+  border: 2px solid #e9d5ff;
+  border-radius: 12px;
+  outline: none;
+  color: #6b21a8;
+  background: #faf5ff;
+  transition: border-color 0.2s;
+}
+
+.pin-input:focus {
+  border-color: #a855f7;
+}
+
+.pin-input.error {
+  border-color: #f43f5e;
+  background: #fff1f2;
+}
+
+.pin-error {
+  color: #f43f5e;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}

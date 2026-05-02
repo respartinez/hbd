@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
 .dialog-overlay {
   position: fixed;
   inset: 0;
@@ -8,70 +10,96 @@
   z-index: 100;
 }
 
-.dialog-gif {
-  width: 50%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 8px;
-  margin: 0 auto;
-  display: block;
-}
-
 .dialog-box {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
+  background: #faf5ff;
+  border-radius: 14px;
+  padding: 1.5rem 2rem 1.4rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   max-width: 300px;
   width: 90%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 2px solid #4169E1;
+  box-shadow:
+    0 2px 0 #e9d5ff,
+    0 6px 28px rgba(168, 85, 247, 0.18);
+  border: 1.5px solid #c4b5fd;
+  position: relative;
+  overflow: visible;
+}
+
+.dialog-flowers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+}
+
+.dialog-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.dialog-gif {
+  width: 50%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  border: 1.5px solid #e9d5ff;
+  display: block;
+  margin: 0 auto;
 }
 
 .dialog-box p {
   margin: 0;
+  font-family: 'Lato', sans-serif;
   font-size: 15px;
-  color: #333;
-  font-weight: 500;
+  color: #3b0764;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .dialog-buttons {
   display: flex;
   gap: 10px;
   justify-content: center;
+  flex-wrap: wrap;
+  min-height: 40px;
+  align-items: center;
 }
 
 .dialog-buttons button {
-  padding: 8px 28px;
+  padding: 8px 22px;
   border-radius: 8px;
-  border: none;
+  border: 1.5px solid #c4b5fd;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-.dialog-buttons button:hover {
-  opacity: 0.85;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+  background: #f5f3ff;
+  color: #3b0764;
 }
 
 .dialog-buttons button:first-child {
-  background: #4169E1;
+  background: #6b21a8;
   color: white;
+  border-color: #4c1d95;
 }
 
-.dialog-buttons button:last-child {
-  background: #f0f0f0;
-  color: #555;
+.dialog-buttons button:first-child:hover {
+  background: #4c1d95;
 }
 
-@media (max-width: 480px) {
-  .dialog-box {
-    padding: 1.25rem 1.5rem;
-  }
+.dialog-buttons button:not(:first-child):hover {
+  background: #ede9fe;
 }
 
 .no-btn-wrapper {
@@ -79,17 +107,8 @@
   display: inline-block;
 }
 
-.second-dialog-buttons {
-  position: relative;
-  min-height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.runaway-btn {
-  position: relative;
-  pointer-events: none;
-  cursor: default;
+@media (max-width: 480px) {
+  .dialog-box {
+    padding: 1.25rem 1.5rem 1.2rem;
+  }
 }
